@@ -1065,6 +1065,11 @@ header .inner-header .text-box .btns-wrapper .video-btn:hover .icon {
   letter-spacing: 1.5px;
 }
 
+.box{
+  float: right;
+  align-items: center;
+}
+
 .newsletter-sec .inner .form-group .form-control::-ms-input-placeholder {
   letter-spacing: 1.5px;
 }
@@ -1085,3 +1090,4 @@ header .inner-header .text-box .btns-wrapper .video-btn:hover .icon {
   top: 5px;
 }
 /*# sourceMappingURL=style.css.map */
+

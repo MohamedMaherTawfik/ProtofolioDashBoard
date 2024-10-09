@@ -7,6 +7,9 @@ $result=mysqli_query($connection,$query);
 
 while($row = mysqli_fetch_assoc($result)){
 ?>
+<div class="box">
+<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: 50px; margin-left: 94%; ">Add Data</button>
+</div>
 <section class="about-sec" data-scroll-index="1">
             <div class="container">
                 <div class="row">
@@ -40,6 +43,70 @@ while($row = mysqli_fetch_assoc($result)){
 <?php
 }
 ?>
+<form action="">
+<!-- Start Modal Form -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+                <div class="form-group">
+                    <label for="logo">Logo</label>
+                    <input type="file" class="form-control" name="logo">
+                    <label for="title">title</label>
+                    <input type="text" class="form-control" name="title">
+                    <label for="subtitle">subtitle</label>
+                    <input type="text" class="form-control" name="subtitle">
+                    <label for="description">description</label>
+                    <input type="text" class="form-control" name="description">
+                    <label for="client_image">client_image</label>
+                    <input type="file" class="form-control" name="client_image">
+                    <label for="about_title">about_title</label>
+                    <input type="text" class="form-control" name="about_title">
+                    <label for="about_description">about_description</label>
+                    <input type="text" class="form-control" name="about_description">
+                    <label for="about_image">about_image</label>
+                    <input type="file" class="form-control" name="about_image">
+                    <label for="about_goals_title">about_goals_title</label>
+                    <input type="text" class="form-control" name="about_goals_title">
+                    <label for="about_goals_description">about_goals_description</label>
+                    <input type="text" class="form-control" name="about_goals_description">
+                    <label for="service_image">service_image</label>
+                    <input type="file" class="form-control" name="service_image">
+                    <label for="service_title">service_title</label>
+                    <input type="text" class="form-control" name="service_title">
+                    <label for="service_description">service_description</label>
+                    <input type="text" class="form-control" name="service_description">
+                    <label for="latest_images">latest_images</label>
+                    <input type="file" class="form-control" name="latest_images">
+                    <label for="our_partners_images">our_partners_images</label>
+                    <input type="file" class="form-control" name="our_partners_images">
+                    <label for="address">address</label>
+                    <input type="text" class="form-control" name="address">
+                    <label for="phone">phone</label>
+                    <input type="text" class="form-control" name="phone">
+                    <label for="email">email</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-success" name="add_data">ADD</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</form>
+
+<!-- End Modal Form -->
+
+
+
         <!--Start clients-sec -->
         <!-- <section class="clients-sec">
             <div class="container">
