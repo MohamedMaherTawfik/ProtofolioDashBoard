@@ -8,7 +8,9 @@ $result=mysqli_query($connection,$query);
 while($row = mysqli_fetch_assoc($result)){
 ?>
 <div class="box">
-<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-top: 50px; margin-left: 94%; ">Add Data</button>
+<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Add Data</button>
+<a href="update.php?title=<?php echo $row['title']; ?>" class="btn btn-success">Update Data</a>
+<a href="delete.php?title=<?php echo $row['title']; ?>" class="btn btn-danger">Delete Data</a>
 </div>
 
 <!--Start about-sec -->
