@@ -1,5 +1,8 @@
 <?php include('header.php'); ?>
 <?php include('db_connection.php'); ?>
+<div class="box">
+<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" style="margin-left: 95%" >Add Data</button>
+</div>
 
 <?php 
 $query="SELECT * FROM `protofolio`";
@@ -7,10 +10,10 @@ $result=mysqli_query($connection,$query);
 
 while($row = mysqli_fetch_assoc($result)){
 ?>
-<div class="box">
-<button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >Add Data</button>
-<a href="update.php?title=<?php echo $row['title']; ?>" class="btn btn-success">Update Data</a>
-<a href="delete.php?title=<?php echo $row['title']; ?>" class="btn btn-danger">Delete Data</a>
+
+<div>
+<a href="update.php?id=<?php echo $row['id']; ?>" class="btn btn-success">Update Data</a>
+<a href="delete.php?id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete Data</a>
 </div>
 
 <!--Start about-sec -->
@@ -170,6 +173,33 @@ while($row = mysqli_fetch_assoc($result)){
             <img src="images/line1.png" alt="" class="line">
         </section>
 
+        <!-- <section class="newsletter-sec">
+            <div class="inner wow fadeInUp" data-wow-duration="2s">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="text-box">
+                                <div class="text-h mb-4">
+                                    <p class="subtitle">Subscribe</p>
+                                    <h1 class="title mt-3">Get Started </h1>
+                                    <p class="p mb-0 mt-3">Type your Email & subscribe to get the latest news directly
+                                        to your inbox</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" placeholder="Type your mail">
+                                    <button class="submit-btn">Get Started</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
 <?php
 }
 ?>
@@ -182,10 +212,21 @@ while($row = mysqli_fetch_assoc($result)){
 if(isset($_GET['insert_msg'])){
     echo "<h6>".$_GET['insert_msg']."</h6>";
 }
-
-
 ?>
 
+<?php
+if(isset($_GET['update_msg'])){
+    echo "<h6>".
+    $_GET['update_msg']."</h6>";
+}
+?>
+
+<?php
+if(isset($_GET['delete_msg'])){
+    echo "<h6>".
+    $_GET['delete_msg']."</h6>";
+}
+?>
 
 <form action="insert_data.php" method="POST" enctype="multipart/form-data">
 <!-- Start Modal Form -->
